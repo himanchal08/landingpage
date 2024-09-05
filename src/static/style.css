@@ -1,17 +1,9 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-weight: 600;
 
-}
 html,
 body {
   height: 100vh;
-  width: 100vw;
   background-color: #821131;
   font-family: "Roboto", sans-serif;
-  
 }
 #loading-page {
   position: fixed;
@@ -71,38 +63,11 @@ body {
   }
 }
 
-.loader1 {
-  width: 180px;
-  height: 10px;
-  background: linear-gradient(to right, #ff6a00, white, green) 0/0% no-repeat
-    #ddd;
-  animation: l1 3.2s linear;
-  border-radius: 10px;
-  position: relative;
-  z-index: 5;
-  margin-top: 28px;
-}
-@keyframes l1 {
-  100% {
-    background-size: 100%;
-  }
-}
-
 #main {
-  min-width: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 30px 100px;
-  z-index: 100;
-  /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4); */
-}
-
-#navbar {
-  position: relative;
 }
 
 #navbar a {
@@ -114,11 +79,6 @@ body {
   font-weight: 600;
   padding: 6px 15px;
   transition: color 0.5s;
-}
-
-#navbar a:hover,
-#navbar a.active {
-  color: #821131;
 }
 
 #navbar a span {
@@ -192,15 +152,9 @@ svg path:hover {
   }
 }
 
-.imn{
-  overflow: hidden;
-  object-fit: cover;
-  width: 100%;
-  height: auto;
-}
 .grid {
   display: flex;
-  justify-content:center;
+  justify-content: center;
   align-items: center;
   height: 100vh;
   background: linear-gradient(135deg, #84fab0 0%, #8fd3f4 100%);
@@ -231,7 +185,7 @@ svg path:hover {
   backdrop-filter: blur(10px);
 }
 
-.card img {   
+.card img {
   width: 100%;
   height: 275px;
   object-fit: cover;

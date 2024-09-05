@@ -9,13 +9,10 @@
 {% endblock %} 
 
 {% block content %}
-<div id="loading-page" class="d-none">
-  <div class="loader"></div>
-  <div class="loader1"></div>
-</div>
+
 <div id="main-content">
   <header id="main">
-    <h2 style="color: azure">Logo</h2>
+    <h2 style="color: azure">FitCoders</h2>
     <nav id="navbar">
       <a href="#" class="active">Home<span></span></a>
       <a href="#">About US<span></span></a>
@@ -29,14 +26,17 @@
       {% endif %}
     </nav>
   </header>
-  <img
-    src="{{ url_for('static', filename='images/img10.jpg') }}"
-    alt=""
-    class="imn"
-  />
+
   <main>
     <div id="details-box"></div>
-    <div class="map_container">{{ india.india() }}</div>
+    <div class="row">
+      <div class="col">
+        
+      </div>
+      <div class="col">
+        {{ india.india() }}
+      </div>
+    </div>
   </main>
   <div class="grid">
     <div class="card-container">
@@ -100,8 +100,5 @@
   </div>
 </div>
 {% endblock %} {% block bottom_scripts %}
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@latest/bundled/lenis.js"></script>
 <script src="{{ url_for('static', filename='app.js')}}"></script>
 {% endblock %}
