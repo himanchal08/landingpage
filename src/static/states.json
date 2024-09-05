@@ -1,0 +1,179 @@
+{
+    "Andhra Pradesh": [
+        "Vijayawada",
+        "Chandavaram",
+        "Kadapa",
+        "Visakhapatnam"
+    ],
+    "Arunachal Pradesh": [
+        "Itanagar"
+    ],
+    "Assam": [
+        "Guwahati",
+        "Mayong"
+    ],
+    "Bihar": [
+        "Patna",
+        "Darbhanga"
+    ],
+    "Chandigarh": [
+        "Chandigarh"
+    ],
+    "Goa": [
+        "Benaulim",
+        "Loutolim",
+        "Nuvem",
+        "Old Goa",
+        "Panaji",
+        "Pilerne",
+        "Vasco da Gama"
+    ],
+    "Gujarat": [
+        "Ahmedabad",
+        "Vadodara",
+        "Porbandar",
+        "Rajkot",
+        "Bhuj",
+        "Surat",
+        "Siddhpur"
+    ],
+    "Haryana": [
+        "Hisar",
+        "Rewari",
+        "Kurukshetra",
+        "Taoru",
+        "Rakhigarhi"
+    ],
+    "Himachal Pradesh": [
+        "Sirmaur",
+        "Dharamsala"
+    ],
+    "Jammu and Kashmir": [
+        "Jammu",
+        "Srinagar"
+    ],
+    "Jharkhand": [
+        "Ranchi"
+    ],
+    "": [
+        "Bijapur"
+    ],
+    "Karnataka": [
+        "Bangalore",
+        "Mangalore",
+        "Dharmasthala",
+        "Mysuru"
+    ],
+    "Kerala": [
+        "Thrissur",
+        "Kochi",
+        "Thiruvananthapuram",
+        "Ayikkara",
+        "Nilambur",
+        "Kollam",
+        "Kozhikode",
+        "Kayamkulam",
+        "Ambalavayal",
+        "Thrippunithura",
+        "Alappuzha"
+    ],
+    "Ladakh": [
+        "Kargil"
+    ],
+    "Madhya Pradesh": [
+        "Indore",
+        "Bhopal",
+        "Dhubela",
+        "Gwalior",
+        "Sanchi",
+        "Vidisha"
+    ],
+    "Maharashtra": [
+        "Mumbai",
+        "Nagpur",
+        "Pune",
+        "Ahmednagar",
+        "Nashik",
+        "Kolhapur",
+        "Ozar"
+    ],
+    "Imphal West District": [
+        "Imphal"
+    ],
+    "Bishnupur district": [
+        "Moirang",
+        "Thanga"
+    ],
+    "Imphal East district": [
+        "Sekta"
+    ],
+    "Mizoram": [
+        "Aizawl"
+    ],
+    "Nagaland": [
+        "Kohima"
+    ],
+    "National Capital Territory of Delhi": [
+        "Delhi"
+    ],
+    "Delhi": [
+        "National Capital Territory of Delhi"
+    ],
+    "Odisha": [
+        "Bhubaneshwar"
+    ],
+    "Puducherry": [
+        "Puducherry"
+    ],
+    "Punjab": [
+        "Anandpur Sahib",
+        "Patiala",
+        "Sanghol",
+        "Amritsar",
+        "Balongi"
+    ],
+    "Rajasthan": [
+        "Jaipur",
+        "Udaipur",
+        "Jodhpur",
+        "Jaisalmer",
+        "Sawai Madhopur"
+    ],
+    "Sikkim": [
+        "Gangtok"
+    ],
+    "Tamil Nadu": [
+        "Chennai",
+        "Madurai",
+        "Coimbatore",
+        "Thanjavur",
+        "Cuddalore",
+        "Karur",
+        "Pudukkottai",
+        "Tiruchirappalli",
+        "Erode"
+    ],
+    "Telangana": [
+        "Alampur",
+        "Hyderabad",
+        "Warangal"
+    ],
+    "Tripura": [
+        "Agartala"
+    ],
+    "Uttar Pradesh": [
+        "Lucknow",
+        "Allahabad",
+        "Kanpur",
+        "Mathura",
+        "Sarnath",
+        "Noida",
+        "Aligarh"
+    ],
+    "West Bengal": [
+        "Kolkata",
+        "Malda",
+        "Mungpoo",
+        "Murshidabad"
+    ]
+}

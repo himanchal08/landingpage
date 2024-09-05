@@ -3,7 +3,7 @@ from __future__ import annotations
 import sqlite3
 
 from flask_wtf import FlaskForm
-from wtforms import EmailField, IntegerField, PasswordField, SubmitField, StringField
+from wtforms import EmailField, PasswordField, SubmitField, StringField
 from wtforms.validators import DataRequired, Email, EqualTo, Length, ValidationError
 
 from src.user import User
@@ -28,7 +28,10 @@ class RegisterForm(FlaskForm):
 
         str_email = email.data.lower()
 
-        if User.from_email(self.conn, email=str_email):
-            raise ValidationError("Email already registered")
+        try:
+            if User.from_email(self.conn, email=str_email):
+                raise ValidationError("Email already registered")
+        except ValueError:
+            return True
 
         return True
