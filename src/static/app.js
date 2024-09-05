@@ -2,19 +2,6 @@ window.onload = () => {
   const loadingPage = document.getElementById("loading-page");
   const mainContent = document.getElementById("main-content");
 
-  // Lenis smooth scrolling
-  const lenis = new Lenis({
-    smooth: true,
-    duration: 1.5, // Adjust based on preference
-  });
-
-  function raf(time) {
-    lenis.raf(time);
-    requestAnimationFrame(raf);
-  }
-
-  requestAnimationFrame(raf);
-
   // GSAP timeline for loading screen transition
   const tl = gsap.timeline();
 

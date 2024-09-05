@@ -1,0 +1,107 @@
+{% extends 'base.html' %} {% import 'india.html' as india %} 
+
+{% block styles %}
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}" />
+<link
+  href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css"
+  rel="stylesheet"
+/>
+{% endblock %} 
+
+{% block content %}
+<div id="loading-page" class="d-none">
+  <div class="loader"></div>
+  <div class="loader1"></div>
+</div>
+<div id="main-content">
+  <header id="main">
+    <h2 style="color: azure">Logo</h2>
+    <nav id="navbar">
+      <a href="#" class="active">Home<span></span></a>
+      <a href="#">About US<span></span></a>
+      <a href="#">Book Tickets<span></span></a>
+      {% if current_user.is_authenticated %}
+      <a href="#"><i class="ri-user-line"></i>{{ current_user.name }}<span></span></a>
+      <a href="{{ url_for('logout') }}"><i class="ri-user-line"></i>Logout<span></span></a>
+      {% else %}
+      <a href="{{ url_for('login') }}"><i class="ri-user-line"></i>Login<span></span></a>
+      <a href="{{ url_for('register') }}"><i class="ri-user-line"></i>Register<span></span></a>
+      {% endif %}
+    </nav>
+  </header>
+  <img
+    src="{{ url_for('static', filename='images/img10.jpg') }}"
+    alt=""
+    class="imn"
+  />
+  <main>
+    <div id="details-box"></div>
+    <div class="map_container">{{ india.india() }}</div>
+  </main>
+  <div class="grid">
+    <div class="card-container">
+      <div class="card">
+        <img
+          src="{{ url_for('static', filename='images/img1.jpg') }}"
+          alt="Card Image"
+        />
+        <div class="card-content">Card 1</div>
+      </div>
+      <div class="card">
+        <img
+          src="{{ url_for('static', filename='images/img2.jpg') }}"
+          alt="Card Image"
+        />
+        <div class="card-content">Card 2</div>
+      </div>
+      <div class="card">
+        <img
+          src="{{ url_for('static', filename='images/img3.jpg') }}"
+          alt="Card Image"
+        />
+        <div class="card-content">Card 3</div>
+      </div>
+      <div class="card">
+        <img
+          src="{{ url_for('static', filename='images/img4.jpg') }}"
+          alt="Card Image"
+        />
+        <div class="card-content">Card 4</div>
+      </div>
+      <div class="card">
+        <img
+          src="{{ url_for('static', filename='images/img5.jpg') }}"
+          alt="Card Image"
+        />
+        <div class="card-content">Card 5</div>
+      </div>
+      <div class="card">
+        <img
+          src="{{ url_for('static', filename='images/img6.jpg') }}"
+          alt="Card Image"
+        />
+        <div class="card-content">Card 6</div>
+      </div>
+      <div class="card">
+        <img
+          src="{{ url_for('static', filename='images/img7.jpg') }}"
+          alt="Card Image"
+        />
+        <div class="card-content">Card 1</div>
+      </div>
+      <div class="card">
+        <img
+          src="{{ url_for('static', filename='images/img8.jpg') }}"
+          alt="Card Image"
+        />
+        <div class="card-content">Card 1</div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %} {% block bottom_scripts %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@latest/bundled/lenis.js"></script>
+<script src="{{ url_for('static', filename='app.js')}}"></script>
+{% endblock %}
