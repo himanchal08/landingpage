@@ -11,24 +11,23 @@
 {% block content %}
 
 <div id="main-content">
-  <header id="main">
+  <header id="main" class="d-flex align-items-center justify-content-between">
     <h2>FitCoders</h2>
     <nav id="navbar">
-      <a href="#" class="active">Home<span></span></a>
-      <a href="#">About US<span></span></a>
-      <a href="{{ url_for('book_ticket') }}">Book Tickets<span></span></a>
+      <a href="#" class="me-2">Home<span></span></a>
+      <a href="#" class="me-2">About US<span></span></a>
+      <a href="{{ url_for('book_ticket') }}" class="me-2">Book Tickets<span></span></a>
       {% if current_user.is_authenticated %}
-      <a href="#"><i class="ri-user-line"></i>{{ current_user.name }}<span></span></a>
-      <a href="{{ url_for('logout') }}"><i class="ri-user-line"></i>Logout<span></span></a>
+      <a href="#" class="me-2"><i class="ri-user-line"></i>{{ current_user.name }}<span></span></a>
+      <a href="{{ url_for('logout') }}" class="me-2"><i class="ri-user-line"></i>Logout<span></span></a>
       {% else %}
-      <a href="{{ url_for('login') }}"><i class="ri-user-line"></i>Login<span></span></a>
-      <a href="{{ url_for('register') }}"><i class="ri-user-line"></i>Register<span></span></a>
+      <a href="{{ url_for('login') }}" class="me-2"><i class="ri-user-line"></i>Login<span></span></a>
+      <a href="{{ url_for('register') }}" class="me-2"><i class="ri-user-line"></i>Register<span></span></a>
       {% endif %}
     </nav>
   </header>
-
   <main>
-    <div id="details-box"></div>
+    <div id="details-box" class="p-2"></div>
     <div class="container">
       <div class="row">
         <div class="col d-flex justify-content-center align-item-center">
@@ -38,72 +37,89 @@
               <button onclick="sendMessage()" id="send-button" class="mt-2">Send</button>
           </div>
         </div>
-        <div class="col">
+        <div class="col mb-4">
           {{ india.india() }}
         </div>
       </div>
     </div>
   </main>
-  <div class="grid">
-    <div class="card-container">
-      <div class="card">
-        <img
-          src="{{ url_for('static', filename='images/img1.jpg') }}"
-          alt="Card Image"
-        />
-        <div class="card-content">Card 1</div>
+  <div class="container">
+    <div class="row row-cols-lg-4">
+      <div class="col mb-4">
+        <div class="card">
+          <img
+            src="{{ url_for('static', filename='images/img1.jpg') }}"
+            alt="Card Image"
+          />
+          <div class="card-content">Konark Sun Temple <br>Odisha</div>
+        </div>
       </div>
-      <div class="card">
-        <img
-          src="{{ url_for('static', filename='images/img2.jpg') }}"
-          alt="Card Image"
-        />
-        <div class="card-content">Card 2</div>
+      <div class="col mb-4">
+        <div class="card">
+          <img
+            src="{{ url_for('static', filename='images/img2.jpg') }}"
+            alt="Card Image"
+          />
+          <div class="card-content">Spiti Valley<br>Shimla</div>
+        </div>
       </div>
-      <div class="card">
-        <img
-          src="{{ url_for('static', filename='images/img3.jpg') }}"
-          alt="Card Image"
-        />
-        <div class="card-content">Card 3</div>
+      <div class="col mb-4">
+        <div class="card">
+          <img
+            src="{{ url_for('static', filename='images/img3.jpg') }}"
+            alt="Card Image"
+          />
+          <div class="card-content">Ganga Arti<br>Vanarasi</div>
+        </div>
       </div>
-      <div class="card">
-        <img
-          src="{{ url_for('static', filename='images/img4.jpg') }}"
-          alt="Card Image"
-        />
-        <div class="card-content">Card 4</div>
+      <div class="col mb-4">
+        <div class="card">
+          <img
+            src="{{ url_for('static', filename='images/img4.jpg') }}"
+            alt="Card Image"
+          />
+          <div class="card-content">The Great Buddha Statue<br>Bihar</div>
+        </div>
       </div>
-      <div class="card">
-        <img
-          src="{{ url_for('static', filename='images/img5.jpg') }}"
-          alt="Card Image"
-        />
-        <div class="card-content">Card 5</div>
+      <div class="col mb-4">
+        <div class="card">
+          <img
+            src="{{ url_for('static', filename='images/img5.jpg') }}"
+            alt="Card Image"
+          />
+          <div class="card-content">Vrandha Ghat <br>Gulmarg</div>
+        </div>
       </div>
-      <div class="card">
-        <img
-          src="{{ url_for('static', filename='images/img6.jpg') }}"
-          alt="Card Image"
-        />
-        <div class="card-content">Card 6</div>
+      <div class="col mb-4">
+          <div class="card">
+          <img
+            src="{{ url_for('static', filename='images/img6.jpg') }}"
+            alt="Card Image"
+          />
+          <div class="card-content">Hawa Mahal<br>Jaipur</div>
+        </div>
       </div>
-      <div class="card">
-        <img
-          src="{{ url_for('static', filename='images/img7.jpg') }}"
-          alt="Card Image"
-        />
-        <div class="card-content">Card 1</div>
+      <div class="col mb-4">
+          <div class="card">
+          <img
+            src="{{ url_for('static', filename='images/img7.jpg') }}"
+            alt="Card Image"
+          />
+          <div class="card-content">Rajgad Fort<br>Pune</div>
+        </div>
       </div>
-      <div class="card">
-        <img
-          src="{{ url_for('static', filename='images/img8.jpg') }}"
-          alt="Card Image"
-        />
-        <div class="card-content">Card 1</div>
+      <div class="col mb-4">
+          <div class="card">
+          <img
+            src="{{ url_for('static', filename='images/img8.jpg') }}"
+            alt="Card Image"
+          />
+          <div class="card-content">Thiruvalluvar Statue<br>KanyaKumari</div>
+        </div>
       </div>
     </div>
   </div>
+  
 </div>
 {% endblock %} {% block bottom_scripts %}
 <script src="{{ url_for('static', filename='app.js')}}"></script>
