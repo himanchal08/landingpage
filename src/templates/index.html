@@ -29,12 +29,18 @@
 
   <main>
     <div id="details-box"></div>
-    <div class="row">
-      <div class="col">
-       
-      </div>
-      <div class="col">
-        {{ india.india() }}
+    <div class="container">
+      <div class="row">
+        <div class="col d-flex justify-content-center align-item-center">
+          <div id="chat-container" class="p-3 mt-5">
+              <div id="chat-box" class="align-start"></div>
+              <input type="text" id="user-input" placeholder="Type your message here...">
+              <button onclick="sendMessage()" id="send-button" class="mt-2">Send</button>
+          </div>
+        </div>
+        <div class="col">
+          {{ india.india() }}
+        </div>
       </div>
     </div>
   </main>
@@ -101,4 +107,5 @@
 </div>
 {% endblock %} {% block bottom_scripts %}
 <script src="{{ url_for('static', filename='app.js')}}"></script>
+<script src="{{ url_for('static', filename='chatbot.js') }}"></script>
 {% endblock %}

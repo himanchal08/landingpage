@@ -19,7 +19,6 @@ def index():
 def book_ticket():
     form: BookingForm = BookingForm()
     if form.validate_on_submit():
-        print("OK")
         museum_id = form.museum.data
         number_of_tickets = form.number_of_tickets.data
         datetime = form.datetime.data
@@ -41,6 +40,10 @@ def book_ticket():
             razorpay_key=RAZORPAY_KEY,
             current_user=current_user,
         )
+    
+    if request.args:
+        museum = request.args.get('museum')
+        price = request.args.get('price')
     return render_template("book-ticket.html", current_user=current_user, form=form)
 
 
