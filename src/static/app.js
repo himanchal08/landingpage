@@ -1,24 +1,4 @@
-window.onload = () => {
-  const loadingPage = document.getElementById("loading-page");
-  const mainContent = document.getElementById("main-content");
 
-  // GSAP timeline for loading screen transition
-  const tl = gsap.timeline();
-
-  tl.to("#loading-page", {
-    opacity: 0,
-    duration: 0.5,
-    delay: 3, // Loader stays visible for 3 seconds
-    onComplete: () => {
-      loadingPage.style.display = "none"; // Hide the loading page
-    },
-  }).to("#main-content", {
-    opacity: 1,
-    duration: 0.5,
-    display: "block", // Show the main content
-    ease: "power1.out",
-  });
-};
 
 // Tooltip behavior
 const tooltipSpan = document.getElementById("details-box");

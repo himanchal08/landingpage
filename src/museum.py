@@ -28,3 +28,13 @@ class Museum:
         data = result.fetchone()
 
         return Museum(conn, **data)
+    
+    @classmethod
+    def all(cls, conn: sqlite3.Connection) -> list[Museum]:
+        cursor = conn.cursor()
+        query = r"SELECT * FROM MUSEUMS"
+
+        result = cursor.execute(query)
+        data = result.fetchall()
+
+        return [Museum(conn, **museum) for museum in data]

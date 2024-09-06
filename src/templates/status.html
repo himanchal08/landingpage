@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% if status == 'ok' %}
+    <div class="alert alert-success rounded rounded-0" role="alert">
+        Payment Successful! Redirecting in <span id="countdown">5</span> seconds...
+    </div>
+{% else %}
+    <div class="alert alert-danger rounded rounded-0" role="alert">
+        Payment Failed! Redirecting in <span id="countdown">5</span> seconds...
+    </div>
+{% endif %}
+
+{% endblock %}
+
+{% block bottom_scripts %}
+
+<script>
+    var countdown = 5;
+    var x = setInterval(function () {
+        countdown--;
+        document.getElementById("countdown").innerText = countdown;
+        if (countdown <= 0) {
+            clearInterval(x);
+            window.location.href = `{{ url_for('index') }}`;
+        }
+    }, 1000);
+</script>
+
+{% endblock %}

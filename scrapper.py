@@ -1,11 +1,10 @@
 import sqlite3
-import json
 
 conn = sqlite3.connect("database.sqlite")
 
-query = "SELECT NAME FROM MUSEUMS"
+query = "DELETE FROM RAZORPAY_ORDERS"
 
 cursor = conn.execute(query)
 
-museums = [row[0].strip() for row in cursor.fetchall()]
-print(json.dumps(museums, indent=4))
+conn.commit()
+conn.close()
