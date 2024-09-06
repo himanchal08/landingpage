@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+from datetime import timezone
 from flask import render_template, request
 from flask_login import current_user, login_required
 from razorpay.errors import SignatureVerificationError
@@ -42,15 +43,15 @@ def book_ticket():
             razorpay_key=RAZORPAY_KEY,
             current_user=current_user,
         )
-    
+
     if request.args and request.method == "GET":
         price = request.args.get('price')
         ticket = Ticket.book(
             conn=conn,
-            price=int(price),
+            price=float(price),
             user=current_user,
-            date=datetime.utcnow(),
-            museum_id=233,
+            date=datetime.now(timezone.utc),
+            museum_id=1,
         )
 
         api_response = ticket.checkout(razorpay_client=razorpay_client)
