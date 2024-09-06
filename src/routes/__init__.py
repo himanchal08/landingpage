@@ -1,12 +1,14 @@
 from __future__ import annotations
 
 from flask import render_template, request
-from flask_login import current_user
+from flask_login import current_user, login_required
 from razorpay.errors import SignatureVerificationError
 
 from src import RAZORPAY_KEY, app, conn, razorpay_client, csrf
 from src.forms import BookingForm
 from src.ticket import Ticket
+from urllib.parse import unquote
+from datetime import datetime
 
 
 @app.route("/index.html")
@@ -16,19 +18,19 @@ def index():
 
 
 @app.route("/book-ticket", methods=["GET", "POST"])
+@login_required
 def book_ticket():
     form: BookingForm = BookingForm()
     if form.validate_on_submit():
         museum_id = form.museum.data
         number_of_tickets = form.number_of_tickets.data
-        datetime = form.datetime.data
+        dt = form.datetime.data
 
-        print(museum_id, number_of_tickets, datetime)
         ticket = Ticket.book(
             conn=conn,
             price=number_of_tickets * 50,
             user=current_user,
-            date=datetime,
+            date=dt,
             museum_id=int(museum_id),
         )
         api_response = ticket.checkout(razorpay_client=razorpay_client)
@@ -41,9 +43,26 @@ def book_ticket():
             current_user=current_user,
         )
     
-    if request.args:
-        museum = request.args.get('museum')
+    if request.args and request.method == "GET":
         price = request.args.get('price')
+        ticket = Ticket.book(
+            conn=conn,
+            price=int(price),
+            user=current_user,
+            date=datetime.utcnow(),
+            museum_id=233,
+        )
+
+        api_response = ticket.checkout(razorpay_client=razorpay_client)
+
+        return render_template(
+            "payment.html",
+            amount=api_response["amount"],
+            order_id=api_response["id"],
+            razorpay_key=RAZORPAY_KEY,
+            current_user=current_user,
+        )
+
     return render_template("book-ticket.html", current_user=current_user, form=form)
 
 

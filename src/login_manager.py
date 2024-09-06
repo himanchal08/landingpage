@@ -13,7 +13,6 @@ def load_user(user_id: str) -> User | None:
     except ValueError:
         return None
 
-
 @login_manager.request_loader
 def load_user_from_request(request) -> User | None:
     email = request.form.get("email")

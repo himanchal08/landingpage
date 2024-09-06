@@ -380,7 +380,8 @@ function handleUserInput(input) {
 
     if (expectedResponse === 'confirm' && formattedInput === 'confirm') {
         displayMessage("Sanjay", "Your booking has been confirmed! Thank you for choosing our service.");
-        expectedResponse = null; // Reset expected response after confirmation
+        expectedResponse = null;
+        window.location.href = `/book-ticket?price=${globalData['totalPrice']}&museum=${globalData['museum']}`;
         return;
     } else if (expectedResponse === 'confirm' && formattedInput !== 'confirm') {
         displayMessage("Sanjay", "Please type 'confirm' to finalize your booking.");
@@ -403,7 +404,7 @@ function handleUserInput(input) {
                 displayMessage("Sanjay", "I'm not sure how to respond to that. Please choose one of the options.");
                 displayOptions(initialOptions);
             }
-        }, 1000); // Simulate typing delay
+        }, 1000);
     } else {
         displayMessage("Sanjay", "I'm not sure how to respond to that. Please choose one of the options.");
         displayOptions(initialOptions);
